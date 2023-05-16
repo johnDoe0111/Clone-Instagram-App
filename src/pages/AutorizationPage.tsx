@@ -9,7 +9,7 @@ import Inst from "../assets/images/Inst.png";
 import { useForm } from "react-hook-form";
 import { theme } from "../mui-customization";
 import { useAppDispatch } from "../hooks/hooks";
-import { autorization } from "../reducers/user/autorizationAction";
+import { autorization } from "../redux/user/autorizationAction";
 
 const AutorizationPage = () => {
   const dispatch = useAppDispatch();
