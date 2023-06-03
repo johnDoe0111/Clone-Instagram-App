@@ -15,7 +15,7 @@ const Search = styled("div")(({ theme }) => ({
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginLeft: 0,
+  marginLeft: '200px',
   width: "100%",
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(1),
@@ -50,6 +50,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const toolbarStyle = {
+  display: "flex", 
+  justifyContent: "space-between",
+  iconBox: {
+    color: "#262626",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "269px",
+  },
+  avatarBox: {
+    width: "20px",
+    height: "20px",
+    borderRadius: "50%",
+    backgroundColor: "#C4C4C4",
+  }
+}
+
 interface IOpen {
   setOpen: (value: boolean) => void;
   setAddPostVariant: (value: boolean) => void;
@@ -76,7 +94,7 @@ const Header: React.FC<IOpen> = ({
           width: "960px",
         }}
       >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Toolbar sx={toolbarStyle}>
           <Box component="img" src={Logo} />
           <Search>
             <SearchIconWrapper>
@@ -88,13 +106,7 @@ const Header: React.FC<IOpen> = ({
             />
           </Search>
           <Box
-            sx={{
-              color: "#262626",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              width: "269px",
-            }}
+            sx={toolbarStyle.iconBox}
           >
             <Home />
             <Box component="img" src={Chat} sx={{ width: "20px" }} />
@@ -107,12 +119,7 @@ const Header: React.FC<IOpen> = ({
             <Box component="img" src={Trends} sx={{ width: "20px" }} />
             <FavoriteBorder />
             <Box
-              sx={{
-                width: "20px",
-                height: "20px",
-                borderRadius: "50%",
-                backgroundColor: "#C4C4C4",
-              }}
+              sx={toolbarStyle.avatarBox}
             ></Box>
           </Box>
         </Toolbar>

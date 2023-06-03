@@ -8,7 +8,58 @@ import { getPosts } from "../redux/posts/postsAction";
 import { useEffect, useState } from "react";
 import PostCreationModal from "../components/PostCreationModal";
 
-const HomePage = () => {
+const Homepage = () => {
+
+  const homepageStyle = {
+    homepageContainer: {
+      width: '980px'
+    },
+    generalBox: {
+      display: "flex", 
+      justifyContent: "space-between", 
+      mt: "24px"
+    },
+    rightItemsBox: {
+      width: "300px", 
+      padding: "30px 0"
+    },
+    rightItemsInnerGeneralBox: {
+      display: "flex", 
+      alignItems: "center",
+      justifyContent: "space-between"
+    },
+    rightItemsInnerBox: {
+      display: "flex", 
+      alignItems: "center",
+    },
+    avatarBox: {
+      width: "56px",
+      height: "56px",
+      borderRadius: "50%",
+      backgroundColor: "#C4C4C4",
+    },
+    p: {
+      color: "#000000",
+      fontWeight: 500,
+      margin: 0,
+    },
+    changeBox: {
+      fontSize: "12px", 
+      color: "#0095F6"
+    },
+    suggestionsBox: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    grayColor: {
+      color: '#8E8E8E'
+    },
+    fontSize: {
+      fontSize: '12px'
+    }
+  }
+
   const dispatch = useAppDispatch();
   const { posts } = useAppSelector((state) => state.posts);
 
@@ -47,14 +98,14 @@ const HomePage = () => {
 
   return (
     <Box>
-      <Container sx={{ width: "980px" }}>
+      <Container sx={homepageStyle.homepageContainer}>
         <Header
           setOpen={setOpen}
           setAddPostVariant={setAddPostVariant}
           setEditModalContent={setEditModalContent}
         />
         <Box
-          sx={{ display: "flex", justifyContent: "space-between", mt: "24px" }}
+          sx={homepageStyle.generalBox}
         >
           <Box>
             {posts.map((post) => (
@@ -70,57 +121,38 @@ const HomePage = () => {
             ))}
           </Box>
           <Box>
-            <Box sx={{ width: "300px", padding: "30px 0" }}>
+            <Box sx={homepageStyle.rightItemsBox}>
               <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
+                sx={homepageStyle.rightItemsInnerGeneralBox}
               >
-                <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Box sx={homepageStyle.rightItemsInnerBox}>
                   <Box
-                    sx={{
-                      width: "56px",
-                      height: "56px",
-                      borderRadius: "50%",
-                      backgroundColor: "#C4C4C4",
-                    }}
+                    sx={homepageStyle.avatarBox}
                   ></Box>
                   <Box sx={{ marginLeft: "12px" }}>
                     <Box
                       component="p"
-                      sx={{
-                        color: "#000000",
-                        fontWeight: 500,
-                        margin: 0,
-                      }}
+                      sx={homepageStyle.p}
                     >
                       johndoe
                     </Box>
                     <Box
                       component="span"
-                      sx={{
-                        color: "#8E8E8E",
-                      }}
+                      sx={homepageStyle.grayColor}
                     >
                       John Doe
                     </Box>
                   </Box>
                 </Box>
-                <Box sx={{ fontSize: "12px", color: "#0095F6" }}>Change</Box>
+                <Box sx={homepageStyle.changeBox}>Change</Box>
               </Box>
               <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
+                sx={homepageStyle.suggestionsBox}
               >
-                <Box sx={{ color: "#8E8E8E" }} component="p">
+                <Box sx={homepageStyle.grayColor} component="p">
                   Suggestions for you
                 </Box>
-                <Box sx={{ fontSize: "12px", color: "#262626" }} component="p">
+                <Box sx={{ fontSize: homepageStyle.fontSize, color: "#262626" }} component="p">
                   See all
                 </Box>
               </Box>
@@ -131,13 +163,13 @@ const HomePage = () => {
               </Box>
               <Box
                 component="p"
-                sx={{ color: "#8E8E8E", fontSize: "12px", mt: "32px" }}
+                sx={{ color: homepageStyle.grayColor, fontSize: homepageStyle.fontSize, mt: "32px" }}
               >
                 Information · Help · Prisoner · API · Job · Privacity ·
                 Conditions · Locations · Trending accounts · Hashtags · Language
               </Box>
               <Box
-                sx={{ color: "#8E8E8E", fontSize: "12px", mt: "18px" }}
+                sx={{ color: homepageStyle.grayColor, fontSize: homepageStyle.fontSize, mt: "18px" }}
                 component="p"
               >
                 © 2022 INSTAGRAM FROM SIMMXS
@@ -164,4 +196,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Homepage;

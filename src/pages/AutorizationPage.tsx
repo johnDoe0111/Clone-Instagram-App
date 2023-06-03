@@ -28,34 +28,38 @@ const AutorizationPage = () => {
     reset();
   };
 
+  const autorizationPageStyle = {
+    width: "760px",
+    height: "100%",
+    display: "flex",
+    imgBox: {
+      width: '437px',
+      margin: '0 auto'
+    },
+    formStyle: {
+      width: '720px'
+    }
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ height: "100vh" }}>
         <Container
-          sx={{
-            width: "760px",
-            height: "100%",
-            display: "flex",
-          }}
+          sx={autorizationPageStyle}
         >
           <Box sx={{ margin: "auto" }}>
             <Box
-              sx={{
-                width: "437px",
-                margin: "0 auto",
-              }}
+              sx={autorizationPageStyle.imgBox}
             >
               <Box
                 component="img"
-                sx={{
-                  width: 437,
-                }}
+                sx={autorizationPageStyle.imgBox}
                 alt="error"
                 src={Inst}
               />
             </Box>
             <Box component="form" onSubmit={handleSubmit(onSubmit)}>
-              <Box sx={{ width: "720px" }}>
+              <Box sx={autorizationPageStyle.formStyle}>
                 <Box component="label">
                   <TextField
                     id="outlined-basic"

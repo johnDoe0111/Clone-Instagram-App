@@ -2,29 +2,39 @@ import { Box } from "@mui/material";
 import { ISkeleton } from "../types/ISkeleton";
 
 export const Skeleton: React.FC<ISkeleton> = ({ username }) => {
+
+  const sceletonStyle = {
+    generalBox: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      ":not(:first-of-type)": { mt: "12px" },
+    },
+    itemsBox: {
+      width: "150px",
+      display: "flex",
+      justifyContent: "space-between",
+    },
+    avatarBox: {
+      width: `37px`,
+      heigth: `37px`,
+      backgroundColor: "#C4C4C4",
+      borderRadius: "50%",    
+    },
+    fontSize: {
+      fontSize: '12px'
+    }
+  }
+
   return (
     <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        ":not(:first-of-type)": { mt: "12px" },
-      }}
+      sx={sceletonStyle.generalBox}
     >
       <Box
-        sx={{
-          width: "150px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
+        sx={sceletonStyle.itemsBox}
       >
         <Box
-          sx={{
-            width: `37px`,
-            heigth: `37px`,
-            backgroundColor: "#C4C4C4",
-            borderRadius: "50%",
-          }}
+          sx={sceletonStyle.avatarBox}
         ></Box>
         <Box>
           <Box
@@ -39,7 +49,7 @@ export const Skeleton: React.FC<ISkeleton> = ({ username }) => {
             sx={{
               margin: 0,
               color: "#8E8E8E",
-              fontSize: "12px",
+              fontSize: sceletonStyle.fontSize,
             }}
             component="p"
           >
@@ -47,7 +57,7 @@ export const Skeleton: React.FC<ISkeleton> = ({ username }) => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ color: "#0095F6", fontSize: "12px" }} component="p">
+      <Box sx={{ color: "#0095F6", fontSize: sceletonStyle.fontSize }} component="p">
         Follow
       </Box>
     </Box>

@@ -21,6 +21,13 @@ const style = {
   boxShadow:
     "0px 4px 4px rgba(0, 0, 0, 0.25), 0px -4px 4px rgba(0, 0, 0, 0.25)",
   borderRadius: "24px",
+  box: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "end",
+    paddingRight: "35px",
+    paddingTop: "16px",
+  }
 };
 
 const secondModalStyle = {
@@ -123,13 +130,7 @@ const PostCreationModal: React.FC<IModal> = ({
         >
           <Box sx={style}>
             <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "end",
-                paddingRight: "35px",
-                paddingTop: "16px",
-              }}
+              sx={style.box}
             >
               <Typography
                 id="modal-modal-title"

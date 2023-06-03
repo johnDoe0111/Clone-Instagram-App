@@ -14,7 +14,7 @@ export const autorizationSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(autorization.pending, (state) => {
-      state.isAdmin = true;
+      state.isAdmin = false;
     });
     builder.addCase(
       autorization.fulfilled,

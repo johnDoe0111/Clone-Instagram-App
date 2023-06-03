@@ -28,6 +28,36 @@ const Posts: React.FC<CombinedInterface> = ({
   handleImageClick,
   handOverId,
 }) => {
+
+  const postsStyle = {
+    generalBox: {
+      width: '600px'
+    },
+    headerBox: {
+      padding: "14px 20px",
+      backgroundColor: "#EFEFEF",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      position: "relative",    
+    },
+    user: {
+      display: "flex", 
+      alignItems: "center"
+    },
+    avatar: {
+      width: "32px", 
+      height: "32px", 
+      borderRadius: "50%"
+    },
+    editAndDeleteModal: {
+      width: "116px",
+      position: "absolute",
+      right: 0,
+      top: 42,
+    }
+  }
+
   const [isExpanded, setIsExpanded] = useState(false);
   const [openEditMode, setopenEditMode] = useState(false);
 
@@ -50,22 +80,15 @@ const Posts: React.FC<CombinedInterface> = ({
   dayjs.extend(relativeTime);
 
   return (
-    <Box sx={{ width: "600px" }}>
+    <Box sx={postsStyle.generalBox}>
       <Box
-        sx={{
-          padding: "14px 20px",
-          backgroundColor: "#EFEFEF",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          position: "relative",
-        }}
+        sx={postsStyle.headerBox}
       >
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={postsStyle.user}>
           <Box
             component="img"
             src={user.avatar}
-            sx={{ width: "32px", height: "32px", borderRadius: "50%" }}
+            sx={postsStyle.avatar}
           ></Box>
           <Box component="p" sx={{ margin: "0px", ml: "14px" }}>
             {user.username}
@@ -81,10 +104,10 @@ const Posts: React.FC<CombinedInterface> = ({
         <Box
           sx={{
             display: openEditMode ? "block" : "none",
-            width: "116px",
-            position: "absolute",
-            right: 0,
-            top: 42,
+            width: postsStyle.editAndDeleteModal.width,
+            position: postsStyle.editAndDeleteModal.position,
+            right: postsStyle.editAndDeleteModal.right,
+            top: postsStyle.editAndDeleteModal.top,
           }}
         >
           <Box

@@ -2,7 +2,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import AutorizationPage from "./pages/AutorizationPage";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/Homepage";
 import { token } from "./api/baseServise";
 import { useEffect } from "react";
 import { checkAutorization } from "./redux/user/autorizationAction";
