@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<AutorizationPage />} />
+        <Route path="/Clone-Instagram" element={<AutorizationPage />} />
         <Route path="/home" element={<HomePage />} />
       </Routes>
     </div>
