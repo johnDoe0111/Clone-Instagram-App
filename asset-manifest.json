@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Clone-Instagram-App/static/css/main.f39940d2.css",
+    "main.js": "/Clone-Instagram-App/static/js/main.8871b0eb.js",
+    "index.html": "/Clone-Instagram-App/index.html",
+    "main.f39940d2.css.map": "/Clone-Instagram-App/static/css/main.f39940d2.css.map",
+    "main.8871b0eb.js.map": "/Clone-Instagram-App/static/js/main.8871b0eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f39940d2.css",
+    "static/js/main.8871b0eb.js"
+  ]
+}
