@@ -75,6 +75,8 @@ const PostCreationModal: React.FC<IModal> = ({
     }
   };
 
+  console.log(typeof selectedFile)
+
   const handleChangeModal = () => {
     setSecondVariant(!secondVariant);
   };
